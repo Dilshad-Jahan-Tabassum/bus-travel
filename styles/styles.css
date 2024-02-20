@@ -7,10 +7,10 @@
 .font-inter{
     font-family: "Inter", sans-serif;
 }
-.bg-img{
+/* .bg-img{
     background-image: url('/images/banner.png');
     background-repeat: no-repeat;
-}
+} */
 .parent-div{
     position: relative;
 }
