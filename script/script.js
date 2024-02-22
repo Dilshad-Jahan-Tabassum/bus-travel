@@ -2,17 +2,19 @@ const seats =  document.getElementsByClassName("bus-seat");
 
 for (const seat of seats) {
     //console.log(seat.innerHTML)
-    seat.addEventListener("click", function(event){  
+    seat.addEventListener("click", function(event){ 
+         //only 4 seat selection 
+         const fourSeat =  getConvertedValue("seat-count");
+         if(fourSeat + 1 > 4){
+             alert("One person can select only four seats");
+             return;
+         }
+
         //seat color
         event.target.style.backgroundColor = "#1DD100";
         event.target.style.color = "white";
 
-        //only 4 seat selection 
-        const fourSeat =  getConvertedValue("seat-count");
-        if(fourSeat + 1 > 4){
-            alert("One person can select only four seats");
-            return;
-        }
+       
         
         //seat booking entry
         const seatName = event.target.innerText;
@@ -51,8 +53,12 @@ for (const seat of seats) {
 
         updateCost(seatPrice)
         updateGrandTotalCost()
+
+        
     })
 }
+
+        
 
 
 //scroll to the p.h. section
@@ -61,6 +67,31 @@ function seatPlanning(){
     routeDeparture.scrollIntoView({behavior: 'smooth'})
     //console.log('click')
 }
+
+//next button update
+
+
+    const nextButton = document.getElementById("next_button")
+
+function updateNextButton(){
+    const p_name = document.getElementById("passenger_name").value
+    const p_number = document.getElementById("phone_number").value
+    const p_email = document.getElementById("email_input").value
+
+    if(p_name === "" && p_email === "" && p_number === ""){
+        nextButton.disabled = true;
+        
+    }
+    else{
+        nextButton.disabled = false
+    }   
+}
+document.getElementById("passenger_name").addEventListener('input', updateNextButton);
+document.getElementById("phone_number").addEventListener('input', updateNextButton);
+document.getElementById("email_input").addEventListener('input', updateNextButton);
+
+updateNextButton();
+
 
 //update grand total cost
 function updateGrandTotalCost(status){
@@ -112,6 +143,4 @@ function getConvertedValue(elemntId){
     return convertPrice;
 }
 
-// function applyInput(){
-    
-// }
+
