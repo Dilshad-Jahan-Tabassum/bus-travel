@@ -13,7 +13,7 @@ for (const seat of seats) {
         //seat color
         event.target.style.backgroundColor = "#1DD100";
         event.target.style.color = "white";
-
+        event.target.setAttribute("disabled", false);
        
         
         //seat booking entry
