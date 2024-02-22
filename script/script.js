@@ -6,6 +6,13 @@ for (const seat of seats) {
         //seat color
         event.target.style.backgroundColor = "#1DD100";
         event.target.style.color = "white";
+
+        //only 4 seat selection 
+        const fourSeat =  getConvertedValue("seat-count");
+        if(fourSeat + 1 > 4){
+            alert("One person can select only four seats");
+            return;
+        }
         
         //seat booking entry
         const seatName = event.target.innerText;
@@ -17,6 +24,7 @@ for (const seat of seats) {
         //seat count increase
         const seatCount = getConvertedValue("seat-count");
         document.getElementById("seat-count").innerText = seatCount + 1;
+        
         //seat count decrease
         const seatDecreaseCount = getConvertedValue("seat-decrease");
         document.getElementById("seat-decrease").innerText = seatDecreaseCount - 1;
@@ -63,14 +71,24 @@ function updateGrandTotalCost(status){
     }
     else{
         const applyCoupon = document.getElementById("apply-coupon").value
-
+        
         if(applyCoupon == "NEW15"){
             const newDiscountPrice = totalCost * .15;
             document.getElementById("grand-total-cost").innerText = totalCost - newDiscountPrice;
+
+            //after apply coupon hidden portion
+            const couponCodeApply = document.getElementById("coupon-code-apply")
+            const ApplyButton = document.getElementById("apply-button")
+            couponCodeApply.classList.add("hidden")
         }
         else if(applyCoupon == "Couple 20"){
             const coupleDiscountPrice = totalCost * .2;
             document.getElementById("grand-total-cost").innerText = totalCost - coupleDiscountPrice;
+
+            //after apply coupon hidden portion
+            const couponCodeApply = document.getElementById("coupon-code-apply")
+            const ApplyButton = document.getElementById("apply-button")
+            couponCodeApply.classList.add("hidden")
         }
         else{
             alert("Please give valid coupon code")
@@ -94,3 +112,6 @@ function getConvertedValue(elemntId){
     return convertPrice;
 }
 
+// function applyInput(){
+    
+// }
