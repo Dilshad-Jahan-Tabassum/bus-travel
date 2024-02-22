@@ -42,7 +42,7 @@
             </p>
             <p class="text-center text-[#1DD100] font-extrabold text-6xl">P Paribahan</p>
             <p class="text-white w-3/6 text-center mx-auto mt-5">End-to-End Travel with P Paribahan offers comprehensive, seamless travel services, focusing on customer satisfaction and a wide range of travel solutions.</p>
-            <button class="bg-[#1DD100] w-24 p-1 mt-4 text-[#030712] rounded-md">Buy Now</button>
+            <button class="bg-[#1DD100] w-24 p-1 mt-4 text-[#030712] rounded-md" onclick="seatPlanning()">Buy Now</button>
           </div>
           <div class="flex flex-cols-3 gap-16 w-2/3 ml-48 child-div-2">
             <div class="flex flex-cols-2 items-center gap-3 bg-white border-b-[3px] border-[#1DD100] w-2/6 rounded-lg px-2">
@@ -113,7 +113,7 @@
       </section>
 
       <!-- p.h paribahan  -->
-      <section class="mt-10 bg-[#F7F8F8] h-[1500px] border-2 border-t-[#1DD100] rounded-t-[50px]">
+      <section id="route-departure" class="mt-10 bg-[#F7F8F8] h-[1500px] border-2 border-t-[#1DD100] rounded-t-[50px]">
         <div class="pt-20">
           <p class="font-raleway font-bold text-2xl text-center">P.H Paribahan</p>
           <p class="text-center">We offers convenient ticket booking for travel, accessible online or in-person, ensuring a smooth journey for passengers.</p>
@@ -133,7 +133,7 @@
   
               <div>
                 <button class="btn bg-[#1DD1001A] text-[#1DD100] rounded font-inter">
-                  <img src="./images/seat-green.png" alt="">40 seats left</button>
+                  <img src="./images/seat-green.png" alt=""><span id="seat-decrease">40</span> seats left</button>
               </div>
             </div>
             <!-- route departure  -->
@@ -201,50 +201,50 @@
                 <p class="py-4">I</p>
                 <p class="py-4">J</p>
               </div>
-              <div class="grid grid-cols-2 gap-2 font-inter font-thin text-[#03071280]">
-                <button class="btn bg-[#0307121A] w-24 py-4">A1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">A2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">B1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">B2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">C1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">C2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">D1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">D2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">E1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">E2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">F1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">F2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">G1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">G2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">H1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">H2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">I1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">I2</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">J1</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">J2</button>
+              <div class=" grid grid-cols-2 gap-2 font-inter font-thin text-[#03071280]">
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">A1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">A2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">B1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">B2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">C1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">C2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">D1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">D2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">E1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">E2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">F1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">F2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">G1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">G2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">H1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">H2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">I1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">I2</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">J1</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">J2</button>
               </div>
   
               <div class="grid grid-cols-2 gap-2 font-inter font-thin text-[#03071280]">
-                <button class="btn bg-[#0307121A] w-24 py-4">A3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">A4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">B3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">B4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">C3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">C4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">D3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">D4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">E3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">E4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">F3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">F4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">G3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">G4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">H3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">H4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">I3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">I4</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">J3</button>
-                <button class="btn bg-[#0307121A] w-24 py-4">J4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">A3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">A4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">B3</button>
+                <button class=" bus-seat btn bg-[#0307121A] w-24 py-4">B4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">C3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">C4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">D3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">D4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">E3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">E4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">F3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">F4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">G3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">G4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">H3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">H4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">I3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">I4</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">J3</button>
+                <button class="bus-seat btn bg-[#0307121A] w-24 py-4">J4</button>
               </div>
             </div>
           </div>
@@ -259,35 +259,31 @@
             <hr>
             <!-- seat booking and price  -->
             <div class="bg-[#F7F8F8] mt-4 rounded-2xl p-8">
-              <div class="flex gap-20 mb-3 font-inter font-medium">
-                <div class="flex flex-col justify-center">
-                  <p>seats <button class="btn btn-success btn-xs rounded-full text-white">0</button></p>
+              
+                <div class="flex gap-20 mb-3 font-inter font-medium seat-selection">  
+                  <p>seats <button id="seat-count" class="btn btn-success btn-xs rounded-full text-white">0</button></p>
+                  <p>class</p>
+                  <p>price</p>
                 </div>
-                <p>class</p>
-                <p>price</p>
-              </div>
-              <hr>
-              <div class="flex flex-col mb-3 font-inter font-medium text-[#03071299]">
-                <div class="flex gap-24">
-                  <p>a1</p>
-                  <p>Economy</p>
-                  <p>550</p>
+                <hr> 
+                <div id="seat-booking-list" >
+                  <!-- Empty list  -->
                 </div>
-              </div>
+              
               <hr>
               <div class="flex gap-44 font-medium">
                 <p>Total Price</p>
-                <p>BDT<span class=""> 0</span></p>
+                <p>BDT<span id="total-cost"> 0</span></p>
               </div>
               <div class="mt-2">
                 <label class="input flex items-center gap-2">
-                  <input type="text" class="grow" placeholder="Search" />
-                  <span class="bg-[#1DD100] w-[80px] text-white text-center rounded-xl ">Apply</span>
+                  <input id="apply-coupon" type="text" class="grow" placeholder="Search" />
+                  <button onclick="updateGrandTotalCost('apply-button')" id="apply-button" class="bg-[#1DD100] w-[80px] text-white text-center rounded-xl ">Apply</button>
                 </label>
               </div>
               <div class="flex gap-40 mt-2 font-medium">
                 <p>Grand Total</p>
-                <p>BDT<span class=""> 0</span></p>
+                <p>BDT<span id="grand-total-cost"> 0</span></p>
               </div>
               
             </div>
